@@ -1,9 +1,15 @@
 # code your #position_taken? method here!
-board = ["X", "X", nil, "", "O", "X", "X", " ", "O"]
+def position_taken?(board, position)
+  if board[position] == " "
+    return false
 
-def position_taken?(board, location)
-index = board[location.to_i - 1]
-
-index != " " && index != "" && index != nil
+  elsif board[position] == ""
+    return false
+  
+  elsif board[position] == "X" || board[position] == "O"
+    return true
+  
+  else
+    return false
+  end
 end
-puts position_taken?(board, 8)
